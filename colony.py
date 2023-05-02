@@ -62,7 +62,7 @@ def interactive_map():
         data=year_data,
         columns=["State", "Inventory"],
         key_on="feature.properties.name",
-        fill_color="BuPu",
+        fill_color="YlOrRd",
         fill_opacity=0.7,
         line_opacity=0.2,
         legend_name="Average Colony Percent Loss",
