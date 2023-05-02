@@ -39,8 +39,10 @@ def interactive_map():
     m = folium.Map(location=[37.8, -96], zoom_start=4)
 
     # Get the GeoJSON data
-    url = "https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json"
-    geojson_data = json.loads(requests.get(url).text)
+    file_path = "data/us_states.json"
+    with open(file_path, "r") as f:
+     geojson_data = json.load(f)
+
 
     # Merge the year_data with the GeoJSON data
     for feature in geojson_data["features"]:
