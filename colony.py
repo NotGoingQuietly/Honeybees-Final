@@ -60,9 +60,9 @@ def interactive_map():
         geo_data=geojson_data,
         name="choropleth",
         data=year_data,
-        columns=["State", "Inventory"],
+        columns=["State", "Colony_loss_pct"]
         key_on="feature.properties.name",
-        fill_color="YlOrRd",
+        fill_color="YYlOrBr",
         fill_opacity=0.7,
         line_opacity=0.2,
         legend_name="Average Colony Percent Loss",
