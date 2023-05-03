@@ -15,10 +15,7 @@ body {
     background-color: #FFF9E6;
 }
 
-My apologies for the confusion earlier. It appears that the custom CSS provided did not include the styling for radio buttons and multiselect boxes. Let's update the CSS to change the colors of the radio buttons and multiselect boxes. Add the following CSS rules to the existing CSS code:
 
-css
-Copy code
 /* Radio buttons */
 input[type="radio"]:checked + span {
     background-color: #1f77b4;
