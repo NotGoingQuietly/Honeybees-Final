@@ -14,6 +14,24 @@ st.markdown(
 body {
     background-color: #FFF9E6;
 }
+.select-box {
+    background-color: #e0e0e0;
+}
+
+/* Change the text color of the select box */
+.select-box option {
+    color: #3f3f3f;
+}
+
+/* Change the background color of the selected option */
+.select-box option:checked {
+    background-color: #b0b0b0;
+}
+
+/* Change the hover effect for options */
+.select-box option:hover {
+    background-color: #c0c0c0;
+}
 
 /* Primary color for headings */
 h1, h2, h3 {
