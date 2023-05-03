@@ -11,12 +11,12 @@ st.markdown(
 <style>
     /* Background color */
 body {
-    background-color: #FFF9E6;
+    background-color: #00000;
 }
 
 /* Radio buttons */
 input[type="radio"]:checked + span {
-    background-color: #FFD700 !important;
+    background-color: #00000 !important;
 }
 
 /* Multiselect */
