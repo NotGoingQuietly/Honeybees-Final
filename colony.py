@@ -168,10 +168,11 @@ def line_chart():
         st.warning("Please select no more than 3 states.")
         return
 
-    years = st.multiselect("Select years", sorted(data3['Year'].unique()), default=sorted(data3['Year'].unique()))
+    # Filter out the year 2022
+    filtered_data = data3.loc[data3['Year'] != 2022]
 
-    if len(states) > 0 and len(years) > 0:
-        filtered_data = data3.loc[data3['Year'].isin(years) & data3['State'].isin(states)]
+    if len(states) > 0:
+        filtered_data = filtered_data.loc[filtered_data['State'].isin(states)]
 
         # Aggregate the data by State and Year, computing the mean Inventory and Colony_Loss
         aggregated_data = filtered_data.groupby(['State', 'Year']).agg({'Inventory': 'mean', 'Colony_Loss': 'mean'}).reset_index()
@@ -188,7 +189,8 @@ def line_chart():
 
         st.altair_chart(chart)
     else:
-        st.warning("Please select at least one state and one year to display the chart.")
+        st.warning("Please select at least one state to display the chart.")
+
 def more_information():
     st.header("More Information")
     st.write("""
