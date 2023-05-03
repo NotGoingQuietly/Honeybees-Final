@@ -13,6 +13,8 @@ data = pd.read_csv('data/honeybee_colonies_2023_03_26.csv')
 data = data[['Year','Period','State' ,'Inventory','Colony_Loss','Colony_loss_pct']].copy()
 data['Colony_loss_pct'] = pd.to_numeric(data['Colony_loss_pct'], errors='coerce')
 data['State'] = data['State'].str.title()
+data['Colony_loss_pct'] = data['Colony_loss_pct'] * 100
+
 # Calculate average values for each year and state
 data_grouped = data.groupby(["Year", "State"]).agg({"Inventory": "mean", "Colony_Loss": "mean", "Colony_loss_pct": "mean"}).reset_index()
 
@@ -50,7 +52,7 @@ def interactive_map():
         if not state_data.empty:
             feature["properties"]["Inventory"] = state_data["Inventory"].values[0]
             feature["properties"]["Colony_Loss"] = state_data["Colony_Loss"].values[0]
-            feature["properties"]["Colony_loss_pct"] = state_data["Colony_loss_pct"].values[0]
+            feature["properties"]["Colony_loss_pct"] = f"{state_data['Colony_loss_pct'].values[0]:.2f}%"
         else:
             feature["properties"]["Inventory"] = None
             feature["properties"]["Colony_Loss"] = None
