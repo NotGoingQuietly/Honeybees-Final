@@ -1,10 +1,3 @@
-def apply_styles():
-    with open("style.css") as f:
-        css = f.read()
-    st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
-
-apply_styles()
-
 import streamlit as st
 import pandas as pd
 import altair as alt
@@ -12,12 +5,45 @@ import folium
 from streamlit_folium import folium_static
 import json
 import requests
-def apply_styles():
-    with open("style.css") as f:
-        css = f.read()
-    st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+# Load custom CSS
+st.markdown(
+    """
+<style>
+    /* Background color */
+body {
+    background-color: #FFF9E6;
+}
 
-apply_styles()
+/* Primary color for headings */
+h1, h2, h3 {
+    color: #FFA500;
+}
+
+/* Secondary color for subheadings and labels */
+h4, h5, h6, label {
+    color: #2A9D8F;
+}
+
+/* Text color */
+p, li {
+    color: #333333;
+}
+
+/* Accent color for links */
+a {
+    color: #FFEEBA;
+}
+
+/* Customize Streamlit components */
+.streamlit-button.primary-button {
+    background-color: #FFA500;
+    color: #FFF9E6;
+}
+
+</style>
+""",
+    unsafe_allow_html=True,
+)
 
 st.set_page_config(layout="wide")
 st.title("Honeybee Colony Inventory and Colony Loss")
