@@ -183,8 +183,8 @@ def line_chart():
             y=alt.Y(f'mean({variable}):Q', axis=alt.Axis(title=f'Average {variable}')),
             color='State:N'
         ).properties(
-            width=600,
-            height=300
+            width=800,
+            height=500
         )
 
         st.altair_chart(chart)
