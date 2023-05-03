@@ -174,22 +174,33 @@ def line_chart():
     if len(states) > 0:
         filtered_data = filtered_data.loc[filtered_data['State'].isin(states)]
 
-        # Aggregate the data by State and Year, computing the mean Inventory and Colony_Loss
-        aggregated_data = filtered_data.groupby(['State', 'Year']).agg({'Inventory': 'mean', 'Colony_Loss': 'mean'}).reset_index()
+        # Aggregate the data by State and Year, computing the mean Inventory, Colony_Loss, and Colony_loss_pct
+        aggregated_data = filtered_data.groupby(['State', 'Year']).agg({'Inventory': 'mean', 'Colony_Loss': 'mean', 'Colony_loss_pct': 'mean'}).reset_index()
+
+        # Define the custom color scheme
+        color_scheme = ["red", "blue", "green"]
 
         # Create a line chart comparing the average inventory and colony loss by year for the selected states
         chart = alt.Chart(aggregated_data).mark_line().encode(
             x=alt.X('Year:N', axis=alt.Axis(title='Year')),
             y=alt.Y(f'mean({variable}):Q', axis=alt.Axis(title=f'Average {variable}')),
-            color='State:N'
+            color=alt.Color('State:N', scale=alt.Scale(range=color_scheme)),
+            tooltip=[
+                alt.Tooltip('State:N', title='State'),
+                alt.Tooltip('Year:N', title='Year'),
+                alt.Tooltip('mean(Inventory):Q', title='Average Inventory', format=',.0f'),
+                alt.Tooltip('mean(Colony_Loss):Q', title='Average Colony Loss', format=',.0f'),
+                alt.Tooltip('mean(Colony_loss_pct):Q', title='Average Percent Colony Loss', format='.2f')
+            ]
         ).properties(
-            width=1000,
-            height=500
+            width=800,
+            height=400
         )
 
         st.altair_chart(chart)
     else:
         st.warning("Please select at least one state to display the chart.")
+
 
 def more_information():
     st.header("More Information")
