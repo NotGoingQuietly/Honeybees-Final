@@ -5,6 +5,7 @@ import folium
 from streamlit_folium import folium_static
 import json
 import requests
+st.set_page_config(layout="wide")
 # Load custom CSS
 st.markdown(
     """
@@ -45,7 +46,7 @@ a {
     unsafe_allow_html=True,
 )
 
-st.set_page_config(layout="wide")
+
 st.title("Honeybee Colony Inventory and Colony Loss")
 #  
 # Sample DataFrame (use your own data)
