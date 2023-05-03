@@ -11,12 +11,12 @@ st.markdown(
 <style>
     /* Background color */
 body {
-    background-color: #00000;
+    background-color: #FFF9E6;
 }
 
 /* Radio buttons */
 input[type="radio"]:checked + span {
-    background-color: #00000 !important;
+    background-color: #FFD700 !important;
 }
 
 /* Multiselect */
@@ -66,10 +66,36 @@ a {
     color: #FFF9E6;
 }
 
+/* Customize sidebar radio buttons and multiselect */
+.sidebar-content .st-rb span {
+    background-color: #FFD700 !important;
+}
+
+.sidebar-content .Select__single-value {
+    color: #FFA500 !important;
+}
+
+.sidebar-content .Select__multi-value__label {
+    color: #FFA500 !important;
+}
+
+.sidebar-content .Select__indicator-separator {
+    background-color: #FFA500 !important;
+}
+
+.sidebar-content .Select__control--is-focused {
+    border-color: #FFA500 !important;
+}
+
+.sidebar-content .Select__indicator {
+    color: #FFA500 !important;
+}
+
 </style>
 """,
     unsafe_allow_html=True,
 )
+
 
 st.title("Honeybee Colony Inventory and Colony Loss")
 #  
