@@ -15,33 +15,31 @@ body {
     background-color: #FFF9E6;
 }
 
-
 /* Radio buttons */
 input[type="radio"]:checked + span {
-    background-color: #1f77b4;
+    background-color: #1f77b4 !important;
 }
 
 /* Multiselect */
 .Select__single-value {
-    color: #1f77b4;
+    color: #1f77b4 !important;
 }
 
 .Select__multi-value__label {
-    color: #1f77b4;
+    color: #1f77b4 !important;
 }
 
 .Select__indicator-separator {
-    background-color: #1f77b4;
+    background-color: #1f77b4 !important;
 }
 
 .Select__control--is-focused {
-    border-color: #1f77b4;
+    border-color: #1f77b4 !important;
 }
 
 .Select__indicator {
-    color: #1f77b4;
+    color: #1f77b4 !important;
 }
-
 
 /* Primary color for headings */
 h1, h2, h3 {
