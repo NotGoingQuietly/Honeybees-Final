@@ -5,6 +5,13 @@ import folium
 from streamlit_folium import folium_static
 import json
 import requests
+def apply_styles():
+    with open("styles.css") as f:
+        css = f.read()
+    st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+
+apply_styles()
+
 st.set_page_config(layout="wide")
 st.title("Honeybee Colony Inventory and Colony Loss")
 #  
