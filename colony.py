@@ -39,7 +39,7 @@ def interactive_map():
 
     # Create a base map
    # m = folium.Map(location=[37.8, -96], zoom_start=4)
-   m = folium.Map(location=[39.8, -118.0], zoom_start=3)
+    m = folium.Map(location=[39.8, -118.0], zoom_start=3)
 
     # Get the GeoJSON data
     file_path = "data/us_states.json"
