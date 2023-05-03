@@ -41,7 +41,7 @@ input[type="radio"]:checked + span {
 .Select__indicator {
     color: #1f77b4;
 }
-Your 
+
 
 /* Primary color for headings */
 h1, h2, h3 {
