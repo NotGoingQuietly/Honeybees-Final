@@ -14,24 +14,37 @@ st.markdown(
 body {
     background-color: #FFF9E6;
 }
-.select-box {
-    background-color: #e0e0e0;
+
+My apologies for the confusion earlier. It appears that the custom CSS provided did not include the styling for radio buttons and multiselect boxes. Let's update the CSS to change the colors of the radio buttons and multiselect boxes. Add the following CSS rules to the existing CSS code:
+
+css
+Copy code
+/* Radio buttons */
+input[type="radio"]:checked + span {
+    background-color: #1f77b4;
 }
 
-/* Change the text color of the select box */
-.select-box option {
-    color: #3f3f3f;
+/* Multiselect */
+.Select__single-value {
+    color: #1f77b4;
 }
 
-/* Change the background color of the selected option */
-.select-box option:checked {
-    background-color: #b0b0b0;
+.Select__multi-value__label {
+    color: #1f77b4;
 }
 
-/* Change the hover effect for options */
-.select-box option:hover {
-    background-color: #c0c0c0;
+.Select__indicator-separator {
+    background-color: #1f77b4;
 }
+
+.Select__control--is-focused {
+    border-color: #1f77b4;
+}
+
+.Select__indicator {
+    color: #1f77b4;
+}
+Your 
 
 /* Primary color for headings */
 h1, h2, h3 {
