@@ -183,7 +183,7 @@ def line_chart():
             y=alt.Y(f'mean({variable}):Q', axis=alt.Axis(title=f'Average {variable}')),
             color='State:N'
         ).properties(
-            width=800,
+            width=1000,
             height=500
         )
 
