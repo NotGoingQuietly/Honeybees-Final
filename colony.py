@@ -54,9 +54,9 @@ def interactive_map():
             feature["properties"]["Colony_Loss"] = state_data["Colony_Loss"].values[0]
             feature["properties"]["Colony_loss_pct"] = f"{state_data['Colony_loss_pct'].values[0]:.2f}%"
         else:
-            feature["properties"]["Inventory"] = None
-            feature["properties"]["Colony_Loss"] = None
-            feature["properties"]["Colony_loss_pct"] = None
+            feature["properties"]["Inventory"] = "No data Available"
+            feature["properties"]["Colony_Loss"] = "No data Available"
+            feature["properties"]["Colony_loss_pct"] = "No data Available"
     # Add Choropleth layer
     choropleth = folium.Choropleth(
         geo_data=geojson_data,
@@ -92,8 +92,8 @@ def interactive_map():
 
 import altair as alt
 
-def bar_line_chart():
-    st.write("## Bar and Line Chart")
+def line_chart():
+    st.write("## Line Chart")
     variable = st.selectbox("Select variable", ["Inventory", "Colony_Loss"])
     states = st.multiselect("Select States", data3['State'].unique())
     if len(states) > 3:
@@ -108,21 +108,19 @@ def bar_line_chart():
         # Aggregate the data by State and Year, computing the mean Inventory and Colony_Loss
         aggregated_data = filtered_data.groupby(['State', 'Year']).agg({'Inventory': 'mean', 'Colony_Loss': 'mean'}).reset_index()
 
-        # Create a bar chart comparing the average inventory and colony loss by year for the selected states
-        chart = alt.Chart(aggregated_data).mark_bar().encode(
+        # Create a line chart comparing the average inventory and colony loss by year for the selected states
+        chart = alt.Chart(aggregated_data).mark_line().encode(
             x=alt.X('Year:N', axis=alt.Axis(title='Year')),
             y=alt.Y(f'mean({variable}):Q', axis=alt.Axis(title=f'Average {variable}')),
-            color='State:N',
-            column='State:N'
+            color='State:N'
         ).properties(
-            width=150,
+            width=600,
             height=300
         )
 
         st.altair_chart(chart)
     else:
         st.warning("Please select at least one state and one year to display the chart.")
-        
 def more_information():
     st.header("More Information")
     st.write("""
@@ -131,7 +129,7 @@ def more_information():
 pages = {
     "Introduction": introduction,
     "Interactive Map": interactive_map,
-    "Bar/Line Chart": bar_line_chart,
+    "Line Chart": line_chart,
     "More Information": more_information,
 }
 
