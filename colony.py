@@ -85,7 +85,7 @@ data['Colony_loss_pct'] = data['Colony_loss_pct'] * 100
 # Calculate average values for each year and state
 data_grouped = data.groupby(["Year", "State"]).agg({"Inventory": "mean", "Colony_Loss": "mean", "Colony_loss_pct": "mean"}).reset_index()
 
-data2 = data[['Year','Period','State' ,'Inventory','Colony_Loss']].copy()
+data2 = data[['Year','Period','State' ,'Inventory','Colony_Loss',"Colony_loss_pct"]].copy()
 data3 = data2.sort_values(by=['State','Year'])
 data3.set_index('Period', inplace=True)
 def introduction():
