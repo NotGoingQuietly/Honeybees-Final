@@ -4,7 +4,6 @@ import altair as alt
 import folium
 from streamlit_folium import folium_static
 import json
-import requests
 st.set_page_config(layout="wide")
 # Load custom CSS
 st.markdown(
@@ -17,28 +16,28 @@ body {
 
 /* Radio buttons */
 input[type="radio"]:checked + span {
-    background-color: #1f77b4 !important;
+    background-color: #FFD700 !important;
 }
 
 /* Multiselect */
 .Select__single-value {
-    color: #1f77b4 !important;
+    color: #FFA500 !important;
 }
 
 .Select__multi-value__label {
-    color: #1f77b4 !important;
+    color: #FFA500 !important;
 }
 
 .Select__indicator-separator {
-    background-color: #1f77b4 !important;
+    background-color: #FFA500 !important;
 }
 
 .Select__control--is-focused {
-    border-color: #1f77b4 !important;
+    border-color: #FFA500 !important;
 }
 
 .Select__indicator {
-    color: #1f77b4 !important;
+    color: #FFA500 !important;
 }
 
 /* Primary color for headings */
@@ -48,7 +47,7 @@ h1, h2, h3 {
 
 /* Secondary color for subheadings and labels */
 h4, h5, h6, label {
-    color: #2A9D8F;
+    color: #228B22;
 }
 
 /* Text color */
@@ -58,7 +57,7 @@ p, li {
 
 /* Accent color for links */
 a {
-    color: #FFEEBA;
+    color: #FFD700;
 }
 
 /* Customize Streamlit components */
@@ -71,7 +70,6 @@ a {
 """,
     unsafe_allow_html=True,
 )
-
 
 st.title("Honeybee Colony Inventory and Colony Loss")
 #  
@@ -156,9 +154,6 @@ def interactive_map():
 
     # Display the map
     folium_static(m)
-
-
-import altair as alt
 
 def line_chart():
     st.write("## Line Chart")
