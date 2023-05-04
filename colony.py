@@ -43,8 +43,9 @@ def introduction():
                 
     st.header("Introduction")
     st.write("""
-    Honeybees play a vital role in food production through their pollination services. This app uses data to explore the health of honeybee colonies in the United States.
-    """)
+    Honeybees play a vital role in US food production, acting as key pollinators for a wide variety of crops. These industrious insects contribute significantly to agricultural productivity, as they are responsible for pollinating around one-third of the food consumed in the United States. Their pollination services boost crop yields and quality, leading to an annual economic value of approximately $15 billion. Some of the most important crops reliant on honeybee pollination include almonds, apples, blueberries, cherries, and cucumbers.
+
+However, honeybee populations have experienced a decline in recent years due to factors such as habitat loss, pesticide exposure, diseases, and climate change. This has raised concerns over the sustainability of food production and the potential impact on the economy. As a result, conservation efforts and research into alternative pollination methods are underway to protect honeybees and ensure the continued success of US food production.)
 
     # Define columns
     col1, col2 = st.beta_columns(2)
