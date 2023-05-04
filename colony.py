@@ -72,7 +72,7 @@ def interactive_map():
         if not state_data.empty:
             feature["properties"]["Inventory"] = state_data["Inventory"].values[0]
             feature["properties"]["Colony_Loss"] = state_data["Colony_Loss"].values[0]
-            feature["properties"]["Colony_loss_pct"] = f"{state_data['Colony_loss_pct'].values[0]:.2f}%"
+            feature["properties"]["Colony_loss_pct"] = f"{state_data['Colony_loss_pct'].values[0]:.2%}%"
         else:
             feature["properties"]["Inventory"] = "No data Available"
             feature["properties"]["Colony_Loss"] = "No data Available"
