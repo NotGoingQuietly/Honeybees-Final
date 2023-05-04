@@ -96,6 +96,8 @@ def interactive_map():
         fields=["name", "Inventory", "Colony_Loss", "Colony_loss_pct"],
         aliases=["State", "Average Colony Inventory", "Average Hive Loss", "Average Pct Hive Loss"],
         localize=True,
+        sticky = True,
+        max_width = 500
     )
 
     # Add GeoJson layer with tooltip to the choropleth
@@ -139,7 +141,7 @@ def line_chart():
                 alt.Tooltip('Year:N', title='Year'),
                 alt.Tooltip('mean(Inventory):Q', title='Average Inventory', format=',.0f'),
                 alt.Tooltip('mean(Colony_Loss):Q', title='Average Colony Loss', format=',.0f'),
-                alt.Tooltip('mean(Colony_loss_pct):Q', title='Average Percent Colony Loss', format='.2f')
+                alt.Tooltip('mean(Colony_loss_pct):Q', title='Average Percent Colony Loss',format='.2%')
             ]
         ).properties(
             width=800,
