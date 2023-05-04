@@ -4,6 +4,7 @@ import altair as alt
 import folium
 from streamlit_folium import folium_static
 import json
+st.set_page_config(layout="wide")
 @st.cache_data
 def load_data():
     data = pd.read_csv('data/honeybee_colonies_2023_03_26.csv')
@@ -22,7 +23,7 @@ def load_geojson_data():
 
 geojson_data = load_geojson_data()
 
-st.set_page_config(layout="wide")
+
 
 
 st.title("Honeybee Colony Inventory and Colony Loss")
