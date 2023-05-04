@@ -44,7 +44,7 @@ def introduction():
     st.write("""
     Honeybees play a vital role in food production through their pollination services. This app uses data to explore the health of honeybee colonies in the United States.
     """)
-    st.image("data/honeybee.jpg")  
+    st.image("data/honeybee.jpg", use_column_width= True)  
                 
 
 
