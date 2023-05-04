@@ -51,7 +51,7 @@ def introduction():
 
     # Add content to the columns
     with col1:
-        st.image("data/honeybee.jpg", use_column_width=True)
+        st.image("data/honeybee.jpg", width=500)
 
     with col2:
         st.write("""
