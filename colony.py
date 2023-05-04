@@ -33,7 +33,7 @@ data = data[['Year','Period','State' ,'Inventory','Colony_Loss','Colony_loss_pct
 data['Colony_loss_pct'] = pd.to_numeric(data['Colony_loss_pct'], errors='coerce')
 data['State'] = data['State'].str.title()
 data['Colony_loss_pct'] = data['Colony_loss_pct'] * 100
-data = data3.loc[data3['Year'] != 2022]
+
 
 # Calculate average values for each year and state
 data_grouped = data.groupby(["Year", "State"]).agg({"Inventory": "mean", "Colony_Loss": "mean", "Colony_loss_pct": "mean"}).reset_index()
