@@ -40,13 +40,23 @@ data_grouped = data_without_2022.groupby(["Year", "State"]).agg({"Inventory": "m
 data3 = data_without_2022.sort_values(by=['State','Year'])
 #data3.set_index('Period', inplace=True)
 def introduction():
+                
     st.header("Introduction")
     st.write("""
     Honeybees play a vital role in food production through their pollination services. This app uses data to explore the health of honeybee colonies in the United States.
     """)
-    st.image("data/honeybee.jpg", height = 200,use_column_width= True)  
-                
 
+    # Define columns
+    col1, col2 = st.beta_columns(2)
+
+    # Add content to the columns
+    with col1:
+        st.image("data/honeybee.jpg",use_column_width= True) 
+
+    with col2:
+        st.write("""
+        This column can contain additional information about honeybees and their importance in agriculture. You can add text, images, charts, or other Streamlit elements here.
+        """)
 
 def interactive_map():
     st.header("Interactive Map")
