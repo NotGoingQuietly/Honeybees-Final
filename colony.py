@@ -133,7 +133,10 @@ def line_chart():
         # Create a line chart comparing the average inventory and colony loss by year for the selected states
         chart = alt.Chart(aggregated_data).mark_line().encode(
             x=alt.X('Year:N', axis=alt.Axis(title='Year')),
-            y=alt.Y(f'mean({variable}):Q', axis=alt.Axis(title=f'Average {variable}')),
+            if variable = "Inventory":
+                 y=alt.Y(f'mean({variable}):Q', axis=alt.Axis(title=f'Average {variable}')),
+            else
+                y=alt.Y(f'mean({variable}):Q', axis=alt.Axis(title=f'Average {variable} %')),
             color=alt.Color('State:N', scale=alt.Scale(range=color_scheme)),
             tooltip=[
                 alt.Tooltip('State:N', title='State'),
