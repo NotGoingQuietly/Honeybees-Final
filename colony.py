@@ -111,7 +111,7 @@ def interactive_map():
 
 def line_chart():
     st.write("## Line Chart")
-    variable = st.selectbox("Select variable", ["Inventory", "Colony_Loss"])
+    variable = st.selectbox("Select variable", ["Inventory", "Colony_loss_pct"])
     states = st.multiselect("Select States", data3['State'].unique())
     if len(states) > 3:
         st.warning("Please select no more than 3 states.")
@@ -127,7 +127,7 @@ def line_chart():
         aggregated_data = filtered_data.groupby(['State', 'Year']).agg({'Inventory': 'mean', 'Colony_Loss': 'mean', 'Colony_loss_pct': 'mean'}).reset_index()
 
         # Define the custom color scheme
-        color_scheme = ["blue", "purple", "orange"]
+        color_scheme = ["blue", "orange", "purple"]
 
         # Create a line chart comparing the average inventory and colony loss by year for the selected states
         chart = alt.Chart(aggregated_data).mark_line().encode(
