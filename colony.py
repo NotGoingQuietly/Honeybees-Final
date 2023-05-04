@@ -20,7 +20,7 @@ data['Colony_loss_pct'] = data['Colony_loss_pct'] * 100
 data_grouped = data.groupby(["Year", "State"]).agg({"Inventory": "mean", "Colony_Loss": "mean", "Colony_loss_pct": "mean"}).reset_index()
 
 data3 = data.sort_values(by=['State','Year'])
-data3.set_index('Period', inplace=True)
+#data3.set_index('Period', inplace=True)
 def introduction():
     st.header("Introduction")
     st.write("""
@@ -75,7 +75,7 @@ def interactive_map():
     # Add tooltip
     tooltip = folium.features.GeoJsonTooltip(
         fields=["name", "Inventory", "Colony_Loss", "Colony_loss_pct"],
-        aliases=["State", "Average Colony Inventory", "Average Hive Loss", "Average Percentage Hive Loss"],
+        aliases=["State", "Average Colony Inventory", "Average Hive Loss", "Average Pct Hive Loss"],
         localize=True,
     )
 
