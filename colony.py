@@ -5,96 +5,6 @@ import folium
 from streamlit_folium import folium_static
 import json
 st.set_page_config(layout="wide")
-# Load custom CSS
-st.markdown(
-    """
-<style>
-    /* Background color */
-body {
-    background-color: #FFF9E6;
-}
-
-/* Radio buttons */
-input[type="radio"]:checked + label {
-    background-color: #FFD700 !important;
-}
-
-/* Multiselect */
-.Select__single-value {
-    color: #FFA500 !important;
-}
-
-.Select__multi-value__label {
-    color: #FFA500 !important;
-}
-
-.Select__indicator-separator {
-    background-color: #FFA500 !important;
-}
-
-.Select__control--is-focused {
-    border-color: #FFA500 !important;
-}
-
-.Select__indicator {
-    color: #FFA500 !important;
-}
-
-/* Primary color for headings */
-h1, h2, h3 {
-    color: #FFA500;
-}
-
-/* Secondary color for subheadings and labels */
-h4, h5, h6, label {
-    color: #228B22;
-}
-
-/* Text color */
-p, li {
-    color: #333333;
-}
-
-/* Accent color for links */
-a {
-    color: #FFD700;
-}
-
-/* Customize Streamlit components */
-.streamlit-button.primary-button {
-    background-color: #FFA500;
-    color: #FFF9E6;
-}
-
-/* Customize sidebar radio buttons and multiselect */
-.sidebar .st-rb span {
-    background-color: #FFD700 !important;
-}
-
-.sidebar .Select__single-value {
-    color: #FFA500 !important;
-}
-
-.sidebar .Select__multi-value__label {
-    color: #FFA500 !important;
-}
-
-.sidebar .Select__indicator-separator {
-    background-color: #FFA500 !important;
-}
-
-.sidebar .Select__control--is-focused {
-    border-color: #FFA500 !important;
-}
-
-.sidebar .Select__indicator {
-    color: #FFA500 !important;
-}
-
-</style>
-""",
-    unsafe_allow_html=True,
-)
 
 
 st.title("Honeybee Colony Inventory and Colony Loss")
@@ -109,8 +19,7 @@ data['Colony_loss_pct'] = data['Colony_loss_pct'] * 100
 # Calculate average values for each year and state
 data_grouped = data.groupby(["Year", "State"]).agg({"Inventory": "mean", "Colony_Loss": "mean", "Colony_loss_pct": "mean"}).reset_index()
 
-data2 = data[['Year','Period','State' ,'Inventory','Colony_Loss',"Colony_loss_pct"]].copy()
-data3 = data2.sort_values(by=['State','Year'])
+data3 = data.sort_values(by=['State','Year'])
 data3.set_index('Period', inplace=True)
 def introduction():
     st.header("Introduction")
