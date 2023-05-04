@@ -4,6 +4,24 @@ import altair as alt
 import folium
 from streamlit_folium import folium_static
 import json
+@st.cache_data
+def load_data():
+    data = pd.read_csv('data/honeybee_colonies_2023_03_26.csv')
+    ...
+    return data
+
+data = load_data()
+
+# Add the st.cache decorator above the function definition for loading the GeoJSON data
+@st.cache_data
+def load_geojson_data():
+    file_path = "data/us_states.json"
+    with open(file_path, "r") as f:
+        geojson_data = json.load(f)
+    return geojson_data
+
+geojson_data = load_geojson_data()
+
 st.set_page_config(layout="wide")
 
 
