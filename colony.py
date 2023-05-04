@@ -32,7 +32,6 @@ data = pd.read_csv('data/honeybee_colonies_2023_03_26.csv')
 data = data[['Year','Period','State' ,'Inventory','Colony_Loss','Colony_loss_pct']].copy()
 data['Colony_loss_pct'] = pd.to_numeric(data['Colony_loss_pct'], errors='coerce')
 data['State'] = data['State'].str.title()
-data['Colony_loss_pct'] = data['Colony_loss_pct'] * 100
 data_without_2022 = data[data['Year'] != 2022]
 
 # Calculate average values for each year and state
