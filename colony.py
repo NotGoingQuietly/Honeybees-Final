@@ -15,7 +15,7 @@ body {
 }
 
 /* Radio buttons */
-input[type="radio"]:checked + span {
+input[type="radio"]:checked + label {
     background-color: #FFD700 !important;
 }
 
@@ -67,27 +67,27 @@ a {
 }
 
 /* Customize sidebar radio buttons and multiselect */
-.sidebar-content .st-rb span {
+.sidebar .st-rb span {
     background-color: #FFD700 !important;
 }
 
-.sidebar-content .Select__single-value {
+.sidebar .Select__single-value {
     color: #FFA500 !important;
 }
 
-.sidebar-content .Select__multi-value__label {
+.sidebar .Select__multi-value__label {
     color: #FFA500 !important;
 }
 
-.sidebar-content .Select__indicator-separator {
+.sidebar .Select__indicator-separator {
     background-color: #FFA500 !important;
 }
 
-.sidebar-content .Select__control--is-focused {
+.sidebar .Select__control--is-focused {
     border-color: #FFA500 !important;
 }
 
-.sidebar-content .Select__indicator {
+.sidebar .Select__indicator {
     color: #FFA500 !important;
 }
 
