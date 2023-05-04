@@ -130,17 +130,22 @@ def line_chart():
         # Define the custom color scheme
         color_scheme = ["blue", "orange", "purple"]
 
+        # Define y-axis title
+        y_axis_title = f'Average {variable}'
+        if variable == 'Colony_loss_pct':
+            y_axis_title += ' (%)'
+
         # Create a line chart comparing the average inventory and colony loss by year for the selected states
         chart = alt.Chart(aggregated_data).mark_line().encode(
             x=alt.X('Year:N', axis=alt.Axis(title='Year')),
-            y=alt.Y(f'mean({variable}:Q', axis=alt.Axis(title=y_axis_title, tickFormat='.2%' if variable == 'Colony_loss_pct' else ',')),
+            y=alt.Y(f'mean({variable}):Q', axis=alt.Axis(title=y_axis_title, tickFormat='.2%' if variable == 'Colony_loss_pct' else ',')),
             color=alt.Color('State:N', scale=alt.Scale(range=color_scheme)),
             tooltip=[
                 alt.Tooltip('State:N', title='State'),
                 alt.Tooltip('Year:N', title='Year'),
                 alt.Tooltip('mean(Inventory):Q', title='Average Inventory', format=',.0f'),
                 alt.Tooltip('mean(Colony_Loss):Q', title='Average Colony Loss', format=',.0f'),
-                alt.Tooltip('mean(Colony_loss_pct):Q', title='Average Percent Colony Loss',format='.2%')
+                alt.Tooltip('mean(Colony_loss_pct):Q', title='Average Percent Colony Loss', format='.2%')
             ]
         ).properties(
             width=800,
@@ -150,6 +155,7 @@ def line_chart():
         st.altair_chart(chart)
     else:
         st.warning("Please select at least one state to display the chart.")
+
 
 
 def more_information():
