@@ -8,7 +8,6 @@ st.set_page_config(layout="wide")
 @st.cache_data
 def load_data():
     data = pd.read_csv('data/honeybee_colonies_2023_03_26.csv')
-    ...
     return data
 
 data = load_data()
