@@ -45,15 +45,7 @@ def introduction():
     st.write("""
     
     """)
-     # Add custom CSS to reduce column spacing
-    custom_css("""
-    .element-container {
-        padding-left: 5px !important;
-        padding-right: 5px !important;
-    }
-    """)
-
-
+   
     # Define columns
     col1, col2 = st.columns([3, 2], gap="small")
 
