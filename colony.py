@@ -127,8 +127,19 @@ def interactive_map():
 
 def line_chart():
     st.write("## Line Chart")
+    variable_title = {
+    "Inventory": "Total Hives",
+    "Colony_loss_pct": "Percent Colony Loss"
+}
+    variable = st.selectbox("Select variable", [variable_title[v] for v in data3.columns if v in variable_display_mapping])
+
+    selected_variable = [var for var, display_name in variable_title.items() if display_name == variable][0]
+
+    y_axis_title = f'Average {selected_variable}'
+if selected_variable == 'Colony_loss_pct':
+    y_axis_title += ' (%)'
     variable = st.selectbox("Select variable", ["Inventory", "Colony_loss_pct"])
-    states = st.multiselect("Select States", data3['State'].unique())
+    states = st.multiselect("Select No more than 3 States", data3['State'].unique())
     if len(states) > 3:
         st.warning("Please select no more than 3 states.")
         return
