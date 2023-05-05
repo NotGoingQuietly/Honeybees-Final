@@ -55,7 +55,7 @@ def introduction():
 
 
     # Define columns
-    col1, col2 = st.beta_columns([3, 2])
+    col1, col2 = st.columns([3, 2], gap="small")
 
     # Add content to the columns
     with col1:
