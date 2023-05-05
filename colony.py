@@ -55,7 +55,9 @@ def introduction():
 
     with col2:
         st.write("""
-        Honeybees play a vital role in US food production, acting as key pollinators for a wide variety of crops. These industrious insects contribute significantly to agricultural productivity, as they are responsible for pollinating around one-third of the food consumed in the United States. Their pollination services boost crop yields and quality, leading to an annual economic value of approximately $15 billion. Some of the most important crops reliant on honeybee pollination include almonds, apples, blueberries, cherries, and cucumbers. However, honeybee populations have experienced a decline in recent years due to factors such as habitat loss, pesticide exposure, diseases, and climate change. This has raised concerns over the sustainability of food production and the potential impact on the economy. As a result, conservation efforts and research into alternative pollination methods are underway to protect honeybees and ensure the continued success of US food production.
+        Honeybees play a vital role in US food production, acting as key pollinators for a wide variety of crops. Honeybees contribute significantly to agricultural productivity, as they are responsible for pollinating around one-third of the food consumed in the United States. Polinators boost crop yields and quality. Some of the most important crops  that rely on honeybee pollination include almonds, apples, blueberries, cherries, and cucumbers. 
+        
+        However, honeybee populations have experienced a decline in recent years due to factors such as habitat loss, pesticide exposure, diseases, and climate change. This has raised concerns over the sustainability of food production and the potential impact on the economy. As a result, conservation efforts and research into alternative pollination methods are underway to protect honeybees and ensure the continued success of US food production.
         """)
                 
     
