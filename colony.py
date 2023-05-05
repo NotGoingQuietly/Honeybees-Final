@@ -60,7 +60,7 @@ def introduction():
         st.write("""
         """)
     st.subheader("About the Data Set")
-    st.markdown("Nevada, New Hampshire, Delaware and Rhode Island did not report any data. Data was aggregated to provide average total hives, average hive loss, and average percent hive loss"
+    st.markdown("Nevada, New Hampshire, Delaware and Rhode Island did not report any data.Data was aggregated to provide average total hives, average hive loss, and average percent hive loss"
                 )
     st.markdown("[Data was obtained from Honeybee Surveys and Reports from the US Deparment of Agriculture ](https://www.nass.usda.gov/Surveys/Guide_to_NASS_Surveys/Bee_and_Honey/)")
 def interactive_map():
@@ -128,7 +128,7 @@ def interactive_map():
 def line_chart():
     st.write("## Line Chart")
     variable = st.selectbox("Select variable", ["Inventory", "Colony_loss_pct"])
-    states = st.multiselect("Select No more than 3 States", data3['State'].unique())
+    states = st.multiselect("Select States", data3['State'].unique())
     if len(states) > 3:
         st.warning("Please select no more than 3 states.")
         return
