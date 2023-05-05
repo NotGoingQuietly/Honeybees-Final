@@ -136,7 +136,7 @@ def line_chart():
     selected_variable = [var for var, display_name in variable_title.items() if display_name == variable][0]
 
     y_axis_title = f'Average {selected_variable}'
-if selected_variable == 'Colony_loss_pct':
+    if selected_variable == 'Colony_loss_pct':
     y_axis_title += ' (%)'
     variable = st.selectbox("Select variable", ["Inventory", "Colony_loss_pct"])
     states = st.multiselect("Select No more than 3 States", data3['State'].unique())
