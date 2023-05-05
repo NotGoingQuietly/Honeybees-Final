@@ -47,7 +47,7 @@ def introduction():
     """)
    
     # Define columns
-    col1, col2, col3 = st.columns([1,2,2], gap="small")
+    col1, col2, col3 = st.columns([2,3,2], gap="small")
 
     # Add content to the columns
     with col1:
