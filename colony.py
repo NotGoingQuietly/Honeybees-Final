@@ -46,9 +46,17 @@ def introduction():
     
     """)
    
-    st.markdown("Honeybees play a crucial role in pollinating crops, and are responsible for around one-third of the food consumed in the country. In fact, honeybees are essential to the success of many important crops, including almonds, apples, blueberries, cherries, and cucumbers Unfortunately, honeybee populations have been declining due to factors like habitat loss, exposure to pesticides, diseases, and climate change. This is a cause for concern, as it could impact food production and the economy. To address this issue, conservation efforts and research into alternative pollination methods are underway to protect honeybees and ensure the continued success of US food production.")       
-    st.image("data/honeybee.jpg", width = 700)
+    # Define columns
+    col1, col2, col3 = st.columns([1,2,1, gap="small")
 
+    # Add content to the columns
+    with col1:
+        st.image("data/honeybee.jpg", use_column_width=True)
+
+    with col2:
+        st.markdown("Honeybees play a crucial role in pollinating crops, and are responsible for around one-third of the food consumed in the country. In fact, honeybees are essential to the success of many important crops, including almonds, apples, blueberries, cherries, and cucumbers Unfortunately, honeybee populations have been declining due to factors like habitat loss, exposure to pesticides, diseases, and climate change. This is a cause for concern, as it could impact food production and the economy. To address this issue, conservation efforts and research into alternative pollination methods are underway to protect honeybees and ensure the continued success of US food production.")       
+    
+    with col3
 def interactive_map():
     st.header("Interactive Map")
     year = st.selectbox("Select year", data_grouped["Year"].unique())
