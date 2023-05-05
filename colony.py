@@ -59,6 +59,8 @@ def introduction():
     with col3:
         st.write("""
         """)
+
+    st.markdown("[Data was obtained from Honeybee Surveys and Reports from the US Deparment of Agriculture ](https://www.nass.usda.gov/Surveys/Guide_to_NASS_Surveys/Bee_and_Honey/)")
 def interactive_map():
     st.header("Interactive Map")
     year = st.selectbox("Select year", data_grouped["Year"].unique())
