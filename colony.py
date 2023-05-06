@@ -125,7 +125,7 @@ def interactive_map():
     folium_static(m)
 
 def line_chart():
-    st.write("## Line Chart")
+    st.subheader("Compare honeybee average hive inventory and average percent hive loss from 2015-2021")
 
     variable_title = {
     "Inventory": "Inventory",
