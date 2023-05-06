@@ -127,7 +127,7 @@ def interactive_map():
 def line_chart():
     st.write("## Line Chart")
 
-    variable_display_mapping = {
+    variable_title = {
     "Inventory": "Inventory",
     "Colony_loss_pct": "Percent Colony Loss"
     }
