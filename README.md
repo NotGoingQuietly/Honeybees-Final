@@ -7,6 +7,8 @@ A line chart is also available to compare states and years to see trends
 
 Users are able to select the year, state and either colony inventory or colony loss. 
 
+Data was obtained from Honeybee Surveys and Reports from the US Deparment of Agriculture (https://www.nass.usda.gov/Surveys/Guide_to_NASS_Surveys/Bee_and_Honey/_)
+
 The streamlit is availabe at https://dgkeating-honeybees-final-colony-lflwmr.streamlit.app/
 
-Data was provided by   
+
