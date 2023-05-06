@@ -64,6 +64,7 @@ def introduction():
     st.markdown("[Data was obtained from Honeybee Surveys and Reports from the US Deparment of Agriculture ](https://www.nass.usda.gov/Surveys/Guide_to_NASS_Surveys/Bee_and_Honey/)")
 def interactive_map():
     st.header("Interactive Map")
+    st.write("Map is color coded based on percent colony loss")
     year = st.selectbox("Select year", data_grouped["Year"].unique())
 
     # Filter data for the selected year
