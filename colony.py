@@ -170,18 +170,10 @@ def line_chart():
     else:
         st.warning("Please select at least one state to display the chart.")
 
-
-
-def more_information():
-    st.header("More Information")
-    st.write("""
-    This section can contain more information about honeybee colonies, their impact on agriculture, or any other relevant content. You can also add external resources or links for users to explore further.
-    """)
 pages = {
     "Introduction": introduction,
     "Interactive Map": interactive_map,
     "Line Chart": line_chart,
-    "More Information": more_information,
 }
 
 st.sidebar.title("Navigation")
