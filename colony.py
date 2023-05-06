@@ -153,7 +153,7 @@ def line_chart():
         color_scheme = ["blue", "orange", "purple"]
 
         # Define y-axis title
-       y_axis_title = f'Average {selected_variable}'
+        y_axis_title = f'Average {selected_variable}'
         if selected_variable == 'Colony_loss_pct':
             y_axis_title += ' (%)'
 
